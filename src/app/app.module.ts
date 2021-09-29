@@ -15,6 +15,8 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {appReducers} from './app.reducer';
 import {environment} from '../environments/environment';
+import {NgxSpinnerModule, NgxSpinnerService} from 'ngx-spinner';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import {environment} from '../environments/environment';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    NgxSpinnerModule,
     ReactiveFormsModule,
     StoreModule.forRoot( appReducers ),
     StoreDevtoolsModule.instrument({
@@ -31,6 +34,7 @@ import {environment} from '../environments/environment';
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
     AppRoutingModule,
+    NoopAnimationsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -41,7 +45,7 @@ import {environment} from '../environments/environment';
       }
     })
   ],
-  providers: [],
+  providers: [NgxSpinnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

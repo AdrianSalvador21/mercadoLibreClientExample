@@ -9,6 +9,57 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    .loader,
+    .request-loader {
+      position: absolute;
+      left: calc(50% - 47px);
+      background: url('./assets/images/brand/Logo_ML@2x.png.png') center center no-repeat;
+      background-size: 70px auto;
+      width: 106px;
+      height: 106px;
+    }
+
+    .loader {
+      top: 45vh;
+    }
+
+    .request-loader {
+      top: -140px;
+    }
+
+    .circular {
+      position: absolute;
+      background: transparent;
+      top: -76px;
+      left: calc(50% - 96px);
+      width: 192px;
+      height: 192px;
+      -webkit-animation: rotate 2s linear infinite;
+      animation: rotate 2s linear infinite;
+    }
+
+    .path {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35;
+      -webkit-animation: dash 3s ease-in-out infinite,
+      color 6s ease-in-out infinite;
+      animation: dash 3s ease-in-out infinite,
+      color 6s ease-in-out infinite;
+      stroke-linecap: round;
+    }
+
+    .loader {
+      display: none;
+      visibility: hidden;
+    }
+
+    app-root:empty+.loader {
+      display: block;
+      visibility: visible;
+    }
+  </style>
 </head>
 <body>
   <app-root></app-root>

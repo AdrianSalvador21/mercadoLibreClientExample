@@ -13,6 +13,7 @@ export class ProductDetailsComponent implements OnInit {
 
   public queryData: string = 'Search';
   public productId: string;
+  public loading = false;
   public productData: any;
   constructor(public router: Router,
               private store: Store<AppState>,
@@ -32,10 +33,10 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   getProductDetails() {
-    console.log('called');
+    this.loading = true;
     this.shopService.getProductDetails(this.productId).subscribe((productDetails) => {
-      console.log(productDetails);
       this.productData = productDetails.item;
+      this.loading = false;
     });
   }
 

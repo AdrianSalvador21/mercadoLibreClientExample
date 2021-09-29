@@ -11,7 +11,7 @@ import {ShopService} from '../../../../core/providers/shop.service';
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent implements OnInit {
-
+  public loading = false;
   public queryData: string;
   public productsList = [];
   constructor(public router: Router,
@@ -37,10 +37,12 @@ export class ProductsListComponent implements OnInit {
   }
 
   getProductsList(query) {
+    this.loading = true;
     this.shopService.getProductsList(query).subscribe((productsData) => {
       const action = new SetSearchDataAction( {...productsData} );
       this.store.dispatch( action );
       this.productsList = productsData.items;
+      this.loading = false;
     });
   }
 
