@@ -1,0 +1,13 @@
+@import "src/stylesheets/variables";
+@import "src/stylesheets/mixins";
+
+.product-item-hr {
+  background-color: $grey;
+}
+
+@include respond-to-max(medium) {
+  .products-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

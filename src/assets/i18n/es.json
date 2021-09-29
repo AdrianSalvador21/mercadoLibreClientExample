@@ -1,0 +1,29 @@
+{
+  "shop": {
+    "searchBox": {
+      "searchPlaceholder": "Nunca dejes de buscar"
+    },
+    "emptyProducts": {
+      "title": "¡Bienvenido a Mercado Libre!",
+      "description": "Compre productos con Envío GRATIS y Rápido en Mercado Libre México. Encuentre miles de marcas y productos a precios increíbles."
+    },
+    "notFinded": {
+      "title": "No hay publicaciones que coincidan con tu búsqueda.",
+      "firstRecommendation": "Revisa la ortografía de la palabra",
+      "secondRecommendation": "Utiliza palabras más genéricas o menos palabras",
+      "thirdRecommendation": " Navega por las categorías para encontrar un producto similar"
+    },
+    "productDetails": {
+      "title": "Descripción del producto",
+      "productsLabel": "Productos",
+      "productConditions": {
+        "new": "Nuevo"
+      }
+    },
+    "global": {
+      "buttons": {
+        "buyBtn": "Comprar"
+      }
+    }
+  }
+}

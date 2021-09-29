@@ -1,0 +1,12 @@
+<div class="mb-16">
+  <div class="breadcrumb-title">
+    <ng-container *ngFor="let item of breadcrumbList; let i = index">
+      <span class="breadcrumb-separator" *ngIf="i !== 0">
+        >
+      </span>
+      <span (click)="goToBreadcrumb(i)" class="breadcrumb-span" [ngClass]="{'breadcrumb-blue-element': i == breadcrumbList.length - 1, 'breadcrumb-gray-element': i < breadcrumbList.length - 1}">
+       {{item}}
+      </span>
+    </ng-container>
+  </div>
+</div>

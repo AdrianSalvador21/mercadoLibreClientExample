@@ -1,0 +1,42 @@
+@import "src/stylesheets/variables";
+@import "src/stylesheets/mixins";
+
+hr {
+  margin-top: 2px;
+  border: $grey 1px solid;
+}
+
+.breadcrumb-gray-element {
+  color: $grey;
+  font-weight: 300;
+  vertical-align: sub;
+}
+
+.breadcrumb-separator {
+  color: $grey;
+  vertical-align: bottom;
+}
+
+.breadcrumb-blue-element {
+  color: $grey;
+  font-weight: 600;
+  vertical-align: sub;
+}
+
+.breadcrumb-title {
+  font-size: 15px;
+  display: block;
+
+  span {
+    padding: 0 2px;
+    cursor: pointer;
+  }
+}
+
+.breadcrumb-home-icon {
+  width: auto;
+  height: auto;
+  color: $grey;
+  font-size: 15px;
+  vertical-align: text-top;
+}

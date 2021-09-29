@@ -1,0 +1,23 @@
+@import "src/stylesheets/variables";
+@import "src/stylesheets/mixins";
+
+.empty-products-container {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 10rem;
+  }
+}
+
+@include respond-to-max(medium) {
+  .empty-products-container {
+    flex-direction: column;
+
+    img {
+      margin-bottom: 30px;
+      margin-right: 0 !important;
+      width: 12rem;
+    }
+  }
+}

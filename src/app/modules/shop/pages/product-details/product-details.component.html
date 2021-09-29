@@ -1,0 +1,44 @@
+<section class="mt-16 mb-16">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12 col-md-10">
+
+        <app-breadcrumbs [breadcrumbList]="['shop.productDetails.productsLabel' | translate, queryData | titlecase, productData.title]"></app-breadcrumbs>
+
+        <div class="section-container pd-32">
+          <div class="row">
+            <div class="col-md-7">
+              <div>
+                <img appLazyImg class="mr-16 product-img" [src]="productData?.picture" alt="product-img"/>
+              </div>
+            </div>
+
+            <div class="col-md-5 product-details">
+              <p class="product-status-label">{{'shop.productDetails.productConditions.' + productData?.condition | translate}} - {{productData?.sold_quantity}} vendidos</p>
+              <h5 class="mb-32 product-name">{{productData?.title}}</h5>
+              <h3 class="mb-32 product-price-container">
+                <span class="mr-8">$ {{productData?.price?.amount | number:'1.0-2'}}</span>
+                <img *ngIf="!!productData?.free_shipping" class="shipping-img" appLazyImg src="../../../../../assets/images/shared/ic_shipping.png" srcset="../../../../../assets/images/shared/ic_shipping@2x.png.png 2x" alt="ic_shipping"/>
+              </h3>
+              <button class="btn btn-primary">{{'shop.global.buttons.buyBtn' | translate}}</button>
+            </div>
+
+
+
+            <div class="col-md-7">
+              <div>
+                <div class="mt-5 product-description">
+                  <h2 class="mb-32 description-label">{{'shop.productDetails.title' | translate}}</h2>
+
+                  <p class="description-text">
+                    {{productData?.description}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

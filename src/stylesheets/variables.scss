@@ -1,0 +1,19 @@
+
+/* Colors */
+$golden-yellow: #FFE600 !default;
+$night-grey: #333333 !default;
+$dim-grey: #666666 !default;
+$grey: #999999 !default;
+$light-grey: #EEEEEE !default;
+$dodger-blue: #3483FA !default;
+
+/* Breakpoints map */
+$xs-screen: 120px !default;
+$small-screen: 576px !default;
+$medium-screen: 768px !default;
+$large-screen: 992px !default;
+$large-screen-height: 800px !default;
+$xl-screen: 1200px !default;
+$xxl-screen: 1600px !default;
+$breakpoints: ("xs": $xs-screen, "small": $small-screen, "medium": $medium-screen, "large": $large-screen, "xl": $xl-screen, "xxl": $xxl-screen) !default;
+

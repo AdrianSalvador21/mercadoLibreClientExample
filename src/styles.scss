@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./stylesheets/variables";
+@import "./src/stylesheets/mixins";
+
+* {
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+
+body {
+  background-color: $light-grey;
+  min-height: 100vh;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mr-16 {
+  margin-right: 16px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.ml-8 {
+  margin-left: 8px;
+}
+
+.ml-16 {
+  margin-left: 16px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.pd-16 {
+  padding: 16px;
+}
+
+.pd-32 {
+  padding: 32px;
+}
+
+.pl-16 {
+  padding-left: 16px;
+}
+
+.btn-primary {
+  background-color: $dodger-blue;
+  color: white;
+  min-width: 16rem;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 48px;
+  padding: 0 24px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.section-container {
+  background-color: white;
+  border-radius: 2px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+

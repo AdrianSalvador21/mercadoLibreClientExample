@@ -1,0 +1,29 @@
+<section class="mt-16 mb-16">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12 col-md-10">
+
+        <app-breadcrumbs *ngIf="!!productsList.length" [breadcrumbList]="['shop.productDetails.productsLabel' | translate, queryData | titlecase]"></app-breadcrumbs>
+
+        <div class="section-container pd-16">
+          <div class="products-list" *ngIf="!!productsList.length else productsEmpty">
+            <div *ngFor="let product of productsList; let i = index;">
+              <app-product-list-item [productItem]="product"></app-product-list-item>
+              <hr *ngIf="i < productsList.length - 1" class="mt-16 mb-16 product-item-hr" />
+            </div>
+          </div>
+
+          <ng-template #productsEmpty>
+            <div *ngIf="!queryData; else noProductsFind">
+              <app-empty-products></app-empty-products>
+            </div>
+
+            <ng-template #noProductsFind>
+              <app-not-finded></app-not-finded>
+            </ng-template>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+@import "src/stylesheets/variables";
+
+header {
+  width: 100%;
+  background-color: $golden-yellow;
+}
+
+.search-box-container {
+  align-items: center;
+  display: flex;
+  padding: 10px 0;
+
+  .input-group {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+  }
+
+  .search-input {
+    font-weight: 300;
+  }
+
+  .search-input:focus {
+    box-shadow: none;
+    border: none;
+  }
+
+  .search-input {
+    color: $night-grey;
+    border: none;
+  }
+
+  .search-input::placeholder {
+    color: $grey;
+  }
+}
+
+.search-icon-container {
+  background-color: $light-grey;
+  border-color: $light-grey;
+}
+
+.search-box-form-container {
+  width: 100%;
+}
+
+.brand-logo {
+  margin-right: 18px;
+}
