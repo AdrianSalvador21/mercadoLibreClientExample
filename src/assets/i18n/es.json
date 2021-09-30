@@ -17,7 +17,9 @@
       "title": "Descripción del producto",
       "productsLabel": "Productos",
       "productConditions": {
-        "new": "Nuevo"
+        "new": "Nuevo",
+        "not_specified": "No especificado",
+        "used": "Usado"
       }
     },
     "global": {

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {StoreModule} from '@ngrx/store';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // Components
@@ -17,6 +17,7 @@ import {appReducers} from './app.reducer';
 import {environment} from '../environments/environment';
 import {NgxSpinnerModule, NgxSpinnerService} from 'ngx-spinner';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {RequestInterceptorService} from './core/interceptors/request-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
       }
     })
   ],
-  providers: [NgxSpinnerService],
+  providers: [NgxSpinnerService, { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

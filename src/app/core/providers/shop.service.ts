@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {map, catchError} from 'rxjs/operators';
 import {throwError} from 'rxjs';
 import {environment} from '../../../environments/environment';
@@ -15,10 +15,7 @@ export class ShopService {
 
   getQuery( query: string ) {
     const url = `${this.apiUrl}${ query }`;
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-    return this.http.get(url, { headers });
+    return this.http.get(url);
   }
 
   getProductsList( query ) {
@@ -30,8 +27,6 @@ export class ShopService {
           return data as any;
         }),
         catchError((e) => {
-          console.log('error', e);
-          // this.validateStatus(e.status);
           this.spinner.hide();
           return throwError(false);
         })
@@ -47,19 +42,9 @@ export class ShopService {
           return data as any;
         }),
         catchError((e) => {
-          console.log('error', e);
-          // this.validateStatus(e.status);
           this.spinner.hide();
           return throwError(false);
         })
       );
   }
-
-  /* validateStatus(status) {
-    if (status === 401) {
-      localStorage.removeItem('accessData');
-      this.router.navigateByUrl('/');
-    }
-  } */
-
 }

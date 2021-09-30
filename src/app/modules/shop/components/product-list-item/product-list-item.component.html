@@ -1,15 +1,14 @@
 <div class="product-item-container cursor-pointer" (click)="goToItemDetails(productItem.id)">
   <div class="product-description">
     <div class="product-img-container">
-      <img appLazyImg class="mr-16 product-img" [src]="productItem.picture"/>
+      <img appLazyImg class="ml-16 mr-32 product-img" [src]="productItem.picture" alt="product-img" />
     </div>
-
     <div>
       <div>
-        <h5  class="mb-32 mt-3 product-title-label">
+        <h5 class="mb-32 mt-3 product-title-label">
           <span class="mr-8">$ {{productItem.price.amount | number:'1.0-2'}}</span>
           <img *ngIf="!!productItem.free_shipping" appLazyImg src="../../../../../assets/images/shared/ic_shipping.png" srcset="../../../../../assets/images/shared/ic_shipping@2x.png.png 2x" alt="ic_shipping"/>
-        </h5 >
+        </h5>
         <p class="product-description-label">{{productItem.title}}</p>
       </div>
     </div>

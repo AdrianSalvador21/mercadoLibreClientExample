@@ -24,10 +24,12 @@ export class SearchBoxComponent implements OnInit {
       );
   }
 
-  validateInput(event) {
-    event.preventDefault();
-    if (!this.queryData) {
-      this.router.navigate(['items']);
+  validateInput(event?) {
+    if (!!event) {
+      event.preventDefault();
+    }
+    if (!this.isInputValid()) {
+      // this.router.navigate(['items']);
       return;
     }
 
@@ -41,7 +43,11 @@ export class SearchBoxComponent implements OnInit {
   }
 
   goToMain() {
-    this.router.navigate(['items']);
+    this.router.navigate(['']);
+  }
+
+  isInputValid() {
+    return !!this.queryData;
   }
 
 }

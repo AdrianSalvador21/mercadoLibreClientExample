@@ -15,13 +15,7 @@
             </div>
 
             <ng-template #productsEmpty>
-              <div *ngIf="!queryData; else noProductsFind">
-                <app-empty-products></app-empty-products>
-              </div>
-
-              <ng-template #noProductsFind>
-                <app-not-finded></app-not-finded>
-              </ng-template>
+              <app-not-finded></app-not-finded>
             </ng-template>
           </div>
         </div>

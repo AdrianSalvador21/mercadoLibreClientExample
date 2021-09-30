@@ -6,13 +6,13 @@
   justify-content: space-between;
 
   .product-img {
-    transition: transform .3s; /* Animation */
+    transition: transform .3s;
   }
 }
 
 .product-item-container:hover {
   .product-img {
-      transform: scale(105%);
+      transform: scale(102%);
   }
 }
 
@@ -24,16 +24,18 @@
     font-weight: 300;
     display: flex;
     align-items: center;
+    width: 70%;
   }
 
   .product-description-label {
     font-size: 18px;
     font-weight: 300;
-    width: 80%;
+    width: 70%;
   }
 }
 
 .product-location {
+  min-width: 8rem;
   p {
     color: $dim-grey;
     font-size: 12px;

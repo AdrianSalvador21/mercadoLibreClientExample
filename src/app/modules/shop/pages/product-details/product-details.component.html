@@ -2,8 +2,9 @@
   <div class="container">
     <div class="row justify-center">
       <div class="col-12 col-md-10" *ngIf="!loading">
-
-        <app-breadcrumbs [breadcrumbList]="['shop.productDetails.productsLabel' | translate, queryData | titlecase, productData?.title]"></app-breadcrumbs>
+        <div>
+          <app-breadcrumbs [breadcrumbList]="['shop.productDetails.productsLabel' | translate, queryData | titlecase, productData?.title]"></app-breadcrumbs>
+        </div>
 
         <div class="section-container pd-32">
           <div class="row">
@@ -20,6 +21,7 @@
                 <span class="mr-8">$ {{productData?.price?.amount | number:'1.0-2'}}</span>
                 <img *ngIf="!!productData?.free_shipping" class="shipping-img" appLazyImg src="../../../../../assets/images/shared/ic_shipping.png" srcset="../../../../../assets/images/shared/ic_shipping@2x.png.png 2x" alt="ic_shipping"/>
               </h3>
+
               <button class="btn btn-primary">{{'shop.global.buttons.buyBtn' | translate}}</button>
             </div>
 
@@ -27,10 +29,7 @@
               <div>
                 <div class="mt-5 product-description">
                   <h2 class="mb-32 description-label">{{'shop.productDetails.title' | translate}}</h2>
-
-                  <p class="description-text">
-                    {{productData?.description}}
-                  </p>
+                  <p class="description-text">{{productData?.description}}</p>
                 </div>
               </div>
             </div>

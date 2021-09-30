@@ -7,14 +7,13 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterTestingModule} from '@angular/router/testing';
 import {Store} from '@ngrx/store';
-import {AppComponent} from './app.component';
-import {StoreDataMock} from './core/models/testDats/StoreDataMock';
-import {NgxSpinnerModule, NgxSpinnerService} from 'ngx-spinner';
-import {AppSpinnerServiceMock} from './core/models/testDats/AppSpinnerServiceMock';
+import {StoreDataMock} from '../../../../core/models/testDats/StoreDataMock';
+import {HomeComponent} from './home.component';
+import {EmptyProductsComponent} from '../../components/empty-products/empty-products.component';
 
-fdescribe('AppComponent unit test', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+fdescribe('HomeComponent unit test', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
 
   const routerSpy = {
     navigate: jasmine.createSpy('navigate'),
@@ -27,12 +26,11 @@ fdescribe('AppComponent unit test', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppComponent ],
+      declarations: [ HomeComponent, EmptyProductsComponent ],
       providers: [
         { provide: Store, useValue: new StoreDataMock()},
-        { provide: NgxSpinnerService, useValue: new AppSpinnerServiceMock() }
       ],
-      imports: [CommonModule, FormsModule, HttpClientModule, RouterTestingModule, ReactiveFormsModule, NgxSpinnerModule, TranslateModule.forRoot({
+      imports: [CommonModule, FormsModule, HttpClientModule, RouterTestingModule, ReactiveFormsModule, TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
           useFactory: (http: HttpClient) => {
@@ -47,12 +45,16 @@ fdescribe('AppComponent unit test', () => {
         entryComponents: [],
       }
     });
-    fixture = TestBed.createComponent( AppComponent );
+    fixture = TestBed.createComponent( HomeComponent );
     component = fixture.componentInstance;
   });
 
-  it('should create EmptyProductsComponent', () => {
+  it('should create HomeComponent', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should validate that emptyProductsComponent is render', () => {
+    expect(component.emptyProductsComponent).toBeDefined();
   });
 
 });

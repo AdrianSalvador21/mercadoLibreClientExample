@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {ProductsListComponent} from './pages/products-list/products-list.component';
 import {ProductDetailsComponent} from './pages/product-details/product-details.component';
 import {ProductsComponent} from './pages/products/products.component';
+import {HomeComponent} from './pages/home/home.component';
 
 const routes: Routes = [
   {
@@ -9,16 +10,29 @@ const routes: Routes = [
     component: ProductsComponent,
     children: [
       {
+        path: '',
+        component: HomeComponent,
+        data: {
+          title: 'Inicio | Mercado Libre',
+          description: 'Compre productos con Envío GRATIS y Rápido en Mercado Libre México. Encuentre miles de marcas y productos a precios increíbles.'
+        },
+      },
+      {
         path: 'items',
-        component: ProductsListComponent
+        component: ProductsListComponent,
+        data: {
+          title: 'Lista de productos | Mercado Libre',
+          description: 'Encontrá todas las categorías y secciones en Mercado Libre México. Descubrí la mejor forma de comprar online.'
+        }
       },
       {
         path: 'items/:id',
-        component: ProductDetailsComponent
+        component: ProductDetailsComponent,
+        data: {title: 'Detalle de producto | Mercado Libre'}
       },
       {
         path: '**',
-        redirectTo: 'items'
+        redirectTo: ''
       }
     ]
   }

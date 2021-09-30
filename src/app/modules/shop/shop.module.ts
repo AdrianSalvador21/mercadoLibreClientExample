@@ -10,6 +10,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductListItemComponent } from './components/product-list-item/product-list-item.component';
 import { NotFindedComponent } from './components/not-finded/not-finded.component';
 import { EmptyProductsComponent } from './components/empty-products/empty-products.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EmptyProductsComponent } from './components/empty-products/empty-produc
     ProductsComponent,
     ProductListItemComponent,
     NotFindedComponent,
-    EmptyProductsComponent
+    EmptyProductsComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

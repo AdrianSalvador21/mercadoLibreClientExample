@@ -12,6 +12,7 @@ header {
 
   .input-group {
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+    min-height: 39px;
   }
 
   .search-input {
@@ -19,13 +20,13 @@ header {
   }
 
   .search-input:focus {
-    box-shadow: none;
     border: none;
+    box-shadow: none;
   }
 
   .search-input {
-    color: $night-grey;
     border: none;
+    color: $night-grey;
   }
 
   .search-input::placeholder {

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {SearchBoxComponent} from '../../components/search-box/search-box.component';
 
 @Component({
   selector: 'app-products',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  @ViewChild(SearchBoxComponent, { static: true })
+  public searchBoxComponent: SearchBoxComponent;
 
   constructor() { }
 

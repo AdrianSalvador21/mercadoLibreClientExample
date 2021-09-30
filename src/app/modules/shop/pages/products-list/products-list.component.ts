@@ -4,6 +4,7 @@ import {Store} from '@ngrx/store';
 import {AppState} from '../../../../app.reducer';
 import {SetQueryDataAction, SetSearchDataAction} from '../../../../core/actions/shop.actions';
 import {ShopService} from '../../../../core/providers/shop.service';
+import {ProductItem} from '../../../../core/models/ProductItem';
 
 @Component({
   selector: 'app-products-list',
@@ -13,12 +14,8 @@ import {ShopService} from '../../../../core/providers/shop.service';
 export class ProductsListComponent implements OnInit {
   public loading = false;
   public queryData: string;
-  public productsList = [];
-  constructor(public router: Router,
-              private route: ActivatedRoute,
-              public shopService: ShopService,
-              private store: Store<AppState>
-  ) { }
+  public productsList: ProductItem[] = [];
+  constructor(public router: Router, private route: ActivatedRoute, public shopService: ShopService, private store: Store<AppState>) { }
 
   ngOnInit() {
     this.route.queryParams

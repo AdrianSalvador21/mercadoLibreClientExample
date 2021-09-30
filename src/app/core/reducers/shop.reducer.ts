@@ -1,14 +1,15 @@
 import * as fromShop from '../actions/shop.actions';
+import {ProductItem} from '../models/ProductItem';
 
 export interface ShopState {
-  searchData: any;
-  selectedProductData: any;
-  query: any;
+  searchData: ProductItem[];
+  selectedProductData: ProductItem;
+  query: string;
 }
 
 const initialStatus: ShopState = {
   searchData: [],
-  selectedProductData: {},
+  selectedProductData: new ProductItem(),
   query: ''
 };
 
