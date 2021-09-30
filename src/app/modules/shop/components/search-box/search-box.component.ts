@@ -9,6 +9,9 @@ import {AppState} from '../../../../app.reducer';
   templateUrl: './search-box.component.html',
   styleUrls: ['./search-box.component.scss']
 })
+/*
+* SearchBoxComponent update query for the product search
+*/
 export class SearchBoxComponent implements OnInit {
 
   public queryData: string = '';
@@ -24,12 +27,14 @@ export class SearchBoxComponent implements OnInit {
       );
   }
 
+  /* Update store query data & update url query
+   * @param event -> html event
+   */
   validateInput(event?) {
     if (!!event) {
       event.preventDefault();
     }
     if (!this.isInputValid()) {
-      // this.router.navigate(['items']);
       return;
     }
 
@@ -42,10 +47,16 @@ export class SearchBoxComponent implements OnInit {
     });
   }
 
+  /*
+   *  Return to home page
+   */
   goToMain() {
     this.router.navigate(['']);
   }
 
+  /*
+   *  Validate if query data is filled
+   */
   isInputValid() {
     return !!this.queryData;
   }

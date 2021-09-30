@@ -22,7 +22,7 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
     TranslateModule,
     FormsModule,
     ReactiveFormsModule,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
   ],
   providers: [],
 })

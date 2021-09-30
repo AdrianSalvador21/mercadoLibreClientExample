@@ -5,11 +5,11 @@
 
         <app-breadcrumbs *ngIf="!!productsList.length" [breadcrumbList]="['shop.productDetails.productsLabel' | translate, queryData | titlecase]"></app-breadcrumbs>
 
-        <div class="section-container pd-16" *ngIf="!loading">
+        <div class="section-container pd-16 mb-16" *ngIf="!loading">
           <div>
             <div class="products-list" *ngIf="!!productsList.length else productsEmpty">
               <div *ngFor="let product of productsList; let i = index;">
-                <app-product-list-item [productItem]="product"></app-product-list-item>
+                <app-product-list-item (emitNavigation)="updateStorageQuery()" [productItem]="product"></app-product-list-item>
                 <hr *ngIf="i < productsList.length - 1" class="mt-16 mb-16 product-item-hr" />
               </div>
             </div>

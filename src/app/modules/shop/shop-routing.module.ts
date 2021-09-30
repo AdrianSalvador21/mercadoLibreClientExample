@@ -14,7 +14,8 @@ const routes: Routes = [
         component: HomeComponent,
         data: {
           title: 'Inicio | Mercado Libre',
-          description: 'Compre productos con Envío GRATIS y Rápido en Mercado Libre México. Encuentre miles de marcas y productos a precios increíbles.'
+          description: 'Compre productos con Envío GRATIS y Rápido en Mercado Libre México. Encuentre miles de marcas y productos a precios increíbles.',
+          keywords: 'marketplace, compras en linea, prestamos hipotecarios, venta online, compra y venta online más grande de América Latina, Mercado Libre'
         },
       },
       {

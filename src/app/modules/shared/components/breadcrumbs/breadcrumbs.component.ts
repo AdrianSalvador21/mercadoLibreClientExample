@@ -14,6 +14,9 @@ export class BreadcrumbsComponent implements OnInit {
   public queryData: string;
   constructor(public router: Router, private store: Store<AppState>) { }
 
+  /*
+  * Init get query data if it's valid & update this.queryData
+  */
   ngOnInit() {
     this.store.select('shop').subscribe(state => {
       if (!!state && !!state.query) {
@@ -22,6 +25,9 @@ export class BreadcrumbsComponent implements OnInit {
     });
   }
 
+  /* Navigate to previous search step
+   * @param index -> breadcrumb item index
+   */
   goToBreadcrumb(index) {
    if (index === 0 || index === 1) {
      const queryParams: Params = { search: this.queryData };

@@ -15,6 +15,7 @@
     },
     "productDetails": {
       "title": "Descripción del producto",
+      "searchLabel": "Busqueda",
       "productsLabel": "Productos",
       "productConditions": {
         "new": "Nuevo",

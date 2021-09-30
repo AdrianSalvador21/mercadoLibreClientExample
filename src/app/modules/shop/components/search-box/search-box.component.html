@@ -9,7 +9,7 @@
             <form (ngSubmit)="validateInput($event)">
               <div class="input-group">
                 <input [(ngModel)]="queryData" [placeholder]="'shop.searchBox.searchPlaceholder' | translate" type="text" name="query-input" id="query-input-id" (keyup.enter)="validateInput($event)" class="form-control search-input">
-                <span class="input-group-text search-icon-container" (click)="validateInput()">
+                <span class="input-group-text search-icon-container cursor-pointer" (click)="validateInput()">
                   <img appLazyImg src="../../../../../assets/images/shared/ic_Search.png" srcset="../../../../../assets/images/shared/ic_Search@2x.png.png 2x" alt="search_icon">
                 </span>
               </div>

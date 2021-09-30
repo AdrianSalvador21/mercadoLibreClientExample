@@ -21,7 +21,7 @@ import { HomeComponent } from './pages/home/home.component';
     ProductListItemComponent,
     NotFindedComponent,
     EmptyProductsComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,
